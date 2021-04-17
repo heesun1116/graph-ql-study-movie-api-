@@ -1,0 +1,52 @@
+/users/1/GET
+overfetching : 필요없는 정보들까지 응답받는 형태
+underFetching : 여러번 요청을 보내야하는 정보에서, 이러한 여러번의 요청을 한번에 요청으로 해결하여 많은 정보를 얻는 방식
+
+qraphQl
+- no url
+- no url structure
+- one endpoint
+- querry {
+    feed{
+        comments
+        likeNumber
+    }
+    notifications{
+        isRead
+    }
+    user{
+        username
+        profiePic
+    }
+}
+
+- answer{
+    feed : [
+        {
+            comments : 1,
+            likeNumber : 20
+        }
+    ],
+    notifications : [
+        {
+            isRead : true
+        }
+    ],
+...
+}
+
+resorver
+- request from grapql server
+- if graphql server find query or muation defination , he find resorver and excutaion that function.
+grapql server
+we tell what kind of muations and what kind of query we have to qraphql server.
+- argument 
+: first ( 현재 object를 보내는 object)
+: second ( argument ,우리가 resorver에 넣을 실제적인 parmeter 혹은 값)
+- resorver can be anything. it could be another api, or database.
+define query(use get the data we want)
+
+
+muation
+- muation use when database state is changed  --- chagne of state
+- we can define the muation we want
